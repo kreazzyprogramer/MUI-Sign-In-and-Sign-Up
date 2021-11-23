@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 // import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import { Link as RouterLink } from "react-router-dom";
 
 
 function Copyright(props) {
@@ -30,7 +31,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignIn() {
+export default function SignIn1() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -110,15 +111,19 @@ export default function SignIn() {
             >
               Sign In
             </Button>
-            <Grid container>
+            <Grid container spacing={5}>
               <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
+                <Link variant="body2">Forgot password?</Link>
+              </Grid>
+              <Grid item >
+                <Link component={RouterLink} to="/SignUp" variant="body2">
+                  Don't have an account? Sign Up
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                <Link component={RouterLink} to="/" variant="body2">
+                  
+                  Back To Perivious SignIn
                 </Link>
               </Grid>
             </Grid>
